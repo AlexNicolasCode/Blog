@@ -1,6 +1,6 @@
 :root {
-  --dark-color: "111111";
-  --white-color: "f9f9f9";  
+  --dark-color: #111111;
+  --white-color: #f9f9f9;  
 }
 
 html,
@@ -8,6 +8,7 @@ body {
   padding: 0;
   margin: 0;
   font-family: "Lato", sans-serif;
+  background-color: var(--dark-color);
 }
 
 a {
