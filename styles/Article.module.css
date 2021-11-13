@@ -78,12 +78,4 @@
     .article__topic {
         margin: 32px 0 16px 0;
     }
-
-    .page__background_image {
-        display: block;
-    }
-
-    .page__page_color {
-        display: none;
-    }
 }

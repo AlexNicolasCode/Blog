@@ -15,10 +15,6 @@ export default function Article() {
       <main className={style.page__main}> 
         <div className={style.page__page_color} />
 
-        <div className={style.page__background_image}>
-            <Image src="/css-image.png" alt="" width={1700} height={100} />
-        </div>
-
         <section className={style.article}>
             <article className={style.article__content}>
                 <article className={style.article__head_content}>
