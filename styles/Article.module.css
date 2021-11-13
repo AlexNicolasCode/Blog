@@ -8,14 +8,18 @@
     background-color: var(--css-color);
 }
 
-.article__content {
+.page__background_image {
+    display: none;
+}
+
+.article {
     padding: 0 30px;
 }
 
 .article__head_content {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    gap: 8px;
     height: 80px;
     margin: 24px 0;
 }
@@ -50,4 +54,36 @@
 
 .article__topic {
     margin-top: 24px;
+}
+
+@media only screen and (min-width: 900px) {
+    .article {
+        display: flex;
+        justify-content: center;
+    }
+    
+    .article__content {
+        width: 610px;
+    }
+
+    .article__head_content {
+        margin: 32px 0;
+    }
+
+    .article__paragraph {
+        display: flex;
+        gap: 24px;
+    }
+
+    .article__topic {
+        margin: 32px 0 16px 0;
+    }
+
+    .page__background_image {
+        display: block;
+    }
+
+    .page__page_color {
+        display: none;
+    }
 }

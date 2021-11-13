@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Image from 'next/image';
 
 import style from '../styles/Article.module.css';
 
@@ -14,39 +15,45 @@ export default function Article() {
       <main className={style.page__main}> 
         <div className={style.page__page_color} />
 
-        <section className={style.article__content}>
-            <article className={style.article__head_content}>
-                <p className={style.article__published_at}>01 Dez, 2035</p>
-                <h1 className={style.article__title}>Introdução ao CSS</h1>
-                <p className={style.article__tags}>CSS - HTML - JavaScript</p>
-            </article>
+        <div className={style.page__background_image}>
+            <Image src="/css-image.png" alt="" width={1700} height={100} />
+        </div>
 
-            <article className={style.article__text}>
-                <p className={style.article__paragraph}>
-                    Conhecer bem a base front-end com certeza é uma tarefa bem complicada para quem está 
-                    começando a programar. Entre HTML, CSS e JavaScript, hoje quero trazer um conteúdo mais 
-                    voltado para estilização da página.
-                </p>
-                <p className={style.article__paragraph}>
-                    Conhecer bem a base front-end com certeza é uma tarefa bem complicada para quem está 
-                    começando a programar. Entre HTML, CSS e JavaScript, hoje quero trazer um conteúdo mais 
-                    voltado para estilização da página.
-                </p>
-                <p className={style.article__paragraph}>
-                    Conhecer bem a base front-end com certeza é uma tarefa bem complicada para quem está 
-                    começando a programar. Entre HTML, CSS e JavaScript, hoje quero trazer um conteúdo mais 
-                    voltado para estilização da página.
-                </p>
-            </article>
+        <section className={style.article}>
+            <article className={style.article__content}>
+                <article className={style.article__head_content}>
+                    <p className={style.article__published_at}>01 Dez, 2035</p>
+                    <h1 className={style.article__title}>Introdução ao CSS</h1>
+                    <p className={style.article__tags}>CSS - HTML - JavaScript</p>
+                </article>
 
-            <h2 className={style.article__topic}>O que é CSS?</h2>
+                <article className={style.article__text}>
+                    <p className={style.article__paragraph}>
+                        Conhecer bem a base front-end com certeza é uma tarefa bem complicada para quem está 
+                        começando a programar. Entre HTML, CSS e JavaScript, hoje quero trazer um conteúdo mais 
+                        voltado para estilização da página.
+                    </p>
+                    <p className={style.article__paragraph}>
+                        Conhecer bem a base front-end com certeza é uma tarefa bem complicada para quem está 
+                        começando a programar. Entre HTML, CSS e JavaScript, hoje quero trazer um conteúdo mais 
+                        voltado para estilização da página.
+                    </p>
+                    <p className={style.article__paragraph}>
+                        Conhecer bem a base front-end com certeza é uma tarefa bem complicada para quem está 
+                        começando a programar. Entre HTML, CSS e JavaScript, hoje quero trazer um conteúdo mais 
+                        voltado para estilização da página.
+                    </p>
+                </article>
 
-            <article className={style.article__text}>
-                <p className={style.article__paragraph}>
-                    Conhecer bem a base front-end com certeza é uma tarefa bem complicada para quem está 
-                    começando a programar. Entre HTML, CSS e JavaScript, hoje quero trazer um conteúdo mais 
-                    voltado para estilização da página.
-                </p>
+                <h2 className={style.article__topic}>O que é CSS?</h2>
+
+                <article className={style.article__text}>
+                    <p className={style.article__paragraph}>
+                        Conhecer bem a base front-end com certeza é uma tarefa bem complicada para quem está 
+                        começando a programar. Entre HTML, CSS e JavaScript, hoje quero trazer um conteúdo mais 
+                        voltado para estilização da página.
+                    </p>
+                </article>
             </article>
         </section>
       </main>
