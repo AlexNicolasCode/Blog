@@ -49,6 +49,36 @@ export default function Home() {
             </ul>
           </article>
         </section>
+
+        <section className={style.last_articles}>
+            <h2 className={style.last_articles__title}>Last Articles</h2>
+
+            <ul className={style.last_articles__list}>
+              <li className={style.article}>
+                <span className={style.article__published_at}>01 Dez, 2021</span>
+                <h3 className={style.article__title}>Introdução ao CSS</h3>
+                <p className={style.article__description}>
+                  dasldkadlkasld dsalk dasldkadlkasld dsalkdasldkadlkasld 
+                  dsalk dasldkadlkasld dsalk dasldkadlkasld dsalk dasldkadlkasld 
+                  dsalkdasldkadlkasld dsalk dasldkadlkasld dsalk dasldkadlkasld dsalk 
+                  dasldkadlkasld dsalk dasldkadlkasld dsalk
+                </p>
+                <p className={style.article__tags}>CSS, HTML, Frontend</p>
+              </li>
+              
+              <li className={style.article}>
+                <span className={style.article__published_at}>01 Dez, 2021</span>
+                <h3 className={style.article__title}>Introdução ao CSS</h3>
+                <p className={style.article__description}>
+                  dasldkadlkasld dsalk dasldkadlkasld dsalkdasldkadlkasld 
+                  dsalk dasldkadlkasld dsalk dasldkadlkasld dsalk dasldkadlkasld 
+                  dsalkdasldkadlkasld dsalk dasldkadlkasld dsalk dasldkadlkasld dsalk 
+                  dasldkadlkasld dsalk dasldkadlkasld dsalk
+                </p>
+                <p className={style.article__tags}>CSS, HTML, Frontend</p>
+              </li>
+            </ul>
+          </section>  
       </main>
     </div>
   )
