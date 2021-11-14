@@ -1,6 +1,11 @@
 :root {
-  --dark-color: "111111";
-  --white-color: "f9f9f9";  
+  --dark-color: #111111;
+  --dark-gray-color: #1C1C1C;  
+  --white-color: #f9f9f9;  
+  --gray-color: #c4c4c4;
+  --css-color: #7838FF;
+  --html-color: #FF4820;
+  --javascript-color: #FFDF38;
 }
 
 html,
@@ -8,11 +13,16 @@ body {
   padding: 0;
   margin: 0;
   font-family: "Lato", sans-serif;
+  background-color: var(--dark-color);
 }
 
 a {
-  color: inherit;
+  color: var(--gray-color);
   text-decoration: none;
+}
+
+a:hover {
+  color: var(--white-color);
 }
 
 * {

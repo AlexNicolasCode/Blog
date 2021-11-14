@@ -4,7 +4,6 @@
 }
 
 element {
-    padding: 0px 16px;
     border:none;
     background-image:none;
     background-color:transparent;
@@ -26,7 +25,6 @@ ul, ol, li {
 }
 
 a {
-    color: inherit;
     text-decoration: none;
 } 
 
