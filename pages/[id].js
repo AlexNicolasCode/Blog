@@ -28,6 +28,9 @@ export default function Article({ article }) {
                 <article className={style.article__text}>
                     {article.content.map((item, index) => {
                         const htmlTags = {
+                            "code": <pre className={style.article__paragraph} key={index}>
+                                        <code>{item.content}</code>
+                                    </pre>,
                             "p": <p className={style.article__paragraph} key={index}>{item.content}</p>,
                             "h2": <h2 className={style.article__topic} key={index}>{item.content}</h2>,
                             "h3": <h3 className={style.article__topic} key={index}>{item.content}</h3>
@@ -127,7 +130,8 @@ const convertToHTMLData = (content) => {
         }
 
         if (item.type === "code") {
-            return { type: 'code', content: 'code'}
+            console.log(item.code)
+            return { type: 'code', content: item.code}
         }
 
         if (item.type === "list") {
