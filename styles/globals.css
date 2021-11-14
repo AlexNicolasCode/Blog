@@ -16,9 +16,17 @@ body {
   background-color: var(--dark-color);
 }
 
+a::before {
+  content: "- ";
+}
+
 a {
-  color: inherit;
+  color: var(--gray-color);
   text-decoration: none;
+}
+
+a:hover {
+  color: var(--white-color);
 }
 
 * {
