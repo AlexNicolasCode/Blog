@@ -1,9 +1,14 @@
 import Head from 'next/head';
 import Image from 'next/image';
+import Link from 'next/link';
+import gql from 'graphql-tag';
+import { DateTime } from 'luxon';
+
+import { client } from '../src/services/apollo';
 
 import style from '../styles/Home.module.css';
 
-export default function Home() {
+export default function Home({ lastArticles }) {
   return (
     <div className={style.home}>
       <Head>
@@ -54,32 +59,50 @@ export default function Home() {
             <h2 className={style.last_articles__title}>Last Articles</h2>
 
             <ul className={style.last_articles__list}>
-              <li className={style.article}>
-                <span className={style.article__published_at}>01 Dez, 2021</span>
-                <h3 className={style.article__title}>Introdução ao CSS</h3>
-                <p className={style.article__description}>
-                  dasldkadlkasld dsalk dasldkadlkasld dsalkdasldkadlkasld 
-                  dsalk dasldkadlkasld dsalk dasldkadlkasld dsalk dasldkadlkasld 
-                  dsalkdasldkadlkasld dsalk dasldkadlkasld dsalk dasldkadlkasld dsalk 
-                  dasldkadlkasld dsalk dasldkadlkasld dsalk
-                </p>
-                <p className={style.article__tags}>CSS, HTML, Frontend</p>
-              </li>
-              
-              <li className={style.article}>
-                <span className={style.article__published_at}>01 Dez, 2021</span>
-                <h3 className={style.article__title}>Introdução ao CSS</h3>
-                <p className={style.article__description}>
-                  dasldkadlkasld dsalk dasldkadlkasld dsalkdasldkadlkasld 
-                  dsalk dasldkadlkasld dsalk dasldkadlkasld dsalk dasldkadlkasld 
-                  dsalkdasldkadlkasld dsalk dasldkadlkasld dsalk dasldkadlkasld dsalk 
-                  dasldkadlkasld dsalk dasldkadlkasld dsalk
-                </p>
-                <p className={style.article__tags}>CSS, HTML, Frontend</p>
-              </li>
+              {lastArticles.map((article, index) => {
+                return (
+                  <Link href={`/${article.slug}`} key={index} passHref>
+                    <li className={style.article}>
+                        <span className={style.article__published_at}>{article.createdAt}</span>
+                        <h3 className={style.article__title}>{article.title}</h3>
+                        <p className={style.article__description}>{article.description}</p>
+                        <p className={style.article__tags}>{article.tags}</p>
+                    </li>
+                  </Link>
+                )
+              })}
             </ul>
           </section>  
       </main>
     </div>
   )
 }
+
+export const getStaticProps = async () => {
+  const { data } = await client.query({ query: gql`query {
+    allArticles {
+      title
+      tags
+      slug
+      createdAt
+      description
+      color
+    }}`,
+  })
+
+  const lastArticles = data.allArticles.map((article) => {
+    return {
+      title: article.title,
+      tags: article.tags,
+      slug: article.slug,
+      createdAt: DateTime.fromISO(article.createdAt).toFormat('dd LLL, yyyy'),
+      description: article.description
+    }
+  });
+
+  return {
+    props: {
+      lastArticles
+    },
+  }
+} 
