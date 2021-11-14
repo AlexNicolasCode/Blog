@@ -43,13 +43,27 @@ export default function Home({ lastArticles }) {
 
             <ul className={style.presentation__social}>
               <li className={style.presentation__brand}>
-                <Image src="/twitter-brands.svg" alt="" width={25} height={25}/>
+                <a href="https://twitter.com/AlexNicolasCode">
+                  <Image src="/twitter-brands.svg" alt="Twitter Alex Nicolas" width={25} height={25}/>
+                </a>
               </li>
+
               <li className={style.presentation__brand}>
-                <Image src="/dev-brands.svg" alt="" width={25} height={25}/>
+                <a href="https://dev.to/alexnicolascode/">
+                  <Image src="/dev-brands.svg" alt="Dev To Alex Nicolas" width={25} height={25}/>
+                </a>
               </li>
+
               <li className={style.presentation__brand}>
-                <Image src="/linkedin-brands.svg" alt="" width={25} height={25}/>
+                <a href="https://linkedin.com/in/nicolas-alex/">
+                  <Image src="/linkedin-brands.svg" alt="Linkedin Alex Nicolas" width={25} height={25}/>
+                </a>
+              </li>
+
+              <li className={style.presentation__brand}>
+                <a href="https://github.com/alexNicolasCode/">
+                  <Image src="/github-brands.svg" alt="GitHub Alex Nicolas" width={25} height={25}/>
+                </a>
               </li>
             </ul>
           </article>
