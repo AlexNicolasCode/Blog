@@ -118,5 +118,6 @@ export const getStaticProps = async () => {
     props: {
       lastArticles
     },
+    revalidate: 60 * 60 * 8
   }
 } 
