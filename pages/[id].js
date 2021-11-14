@@ -43,7 +43,7 @@ export default function Article({ article }) {
                                     {item.content.map((content, index) => {
                                         return (
                                             <li key={index}>
-                                                <a href={content.url}>{content.name}</a>
+                                                <a className={style.article__external_link} href={content.url}>{content.name}</a>
                                             </li>
                                         )
                                     })}
@@ -112,6 +112,7 @@ export const getStaticProps = async (ctx) => {
         props: {
             article
         },
+        revalidate: 60 * 60 * 8
     }
 }
 
