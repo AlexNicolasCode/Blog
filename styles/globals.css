@@ -16,10 +16,6 @@ body {
   background-color: var(--dark-color);
 }
 
-a::before {
-  content: "- ";
-}
-
 a {
   color: var(--gray-color);
   text-decoration: none;
