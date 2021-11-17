@@ -9,7 +9,7 @@ export default function Article({ article }) {
     return (
     <div className={style.page}>
         <Head>
-        <title>Article Name - Blog</title>
+        <title>{article.title} - Blog</title>
         <meta name="description" content="Blog criado por Alex Nicolas para agregar artigos, links e conteúdos relevantes sobre programação" />
         <link rel="icon" href="/favicon.ico" />
         </Head>
@@ -130,7 +130,6 @@ const convertToHTMLData = (content) => {
         }
 
         if (item.type === "code") {
-            console.log(item.code)
             return { type: 'code', content: item.code}
         }
 
