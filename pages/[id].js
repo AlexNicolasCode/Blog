@@ -40,7 +40,7 @@ export default function Article({ article }) {
                             return htmlTags[item.type]
                         }
 
-                        if (item.type === "ul") {
+                        if (item.type === "ul" && item.content[0].url) {
                             return (
                                 <ul key={index}>
                                     {item.content.map((content, index) => {
@@ -49,6 +49,16 @@ export default function Article({ article }) {
                                                 <a className={style.article__external_link} href={content.url}>{content.name}</a>
                                             </li>
                                         )
+                                    })}
+                                </ul>
+                            )
+                        }
+
+                        if (item.type === "ul") {
+                            return (
+                                <ul className={style.article__list} key={index}>
+                                    {item.content.map((content, index) => {
+                                        return <li key={index}>{content.name}</li>
                                     })}
                                 </ul>
                             )
@@ -103,7 +113,7 @@ export const getStaticProps = async (ctx) => {
     const articleData = data.article;
     const contentData = articleData.content.value.document.children;
     const content = convertToHTMLData(contentData);
-
+    
     const article = {
         createdAt: DateTime.fromISO(articleData.createdAt).toFormat('dd LLL, yyyy'),
         title: articleData.title,
@@ -136,8 +146,14 @@ const convertToHTMLData = (content) => {
         if (item.type === "list") {
             const content = item.children.map((item) => {
                 const base = item.children[0].children[0];
-                return { name: base.children[0].value, url: base.url  }
+
+                if (base.url) {
+                    return { name: base.children[0].value, url: base.url  }
+                }
+
+                return { name: base.value }
             })
+            
             return { type: 'ul', content: content}
         }
     })
