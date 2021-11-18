@@ -60,6 +60,10 @@
     content: "- ";
 }
 
+.article__link_list {
+    list-style: none;
+}
+
 .article__list {
     padding: 8px 24px;
 }
