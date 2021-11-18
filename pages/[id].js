@@ -42,7 +42,7 @@ export default function Article({ article }) {
 
                         if (item.type === "ul" && item.content[0].url) {
                             return (
-                                <ul key={index}>
+                                <ul className={style.article__link_list} key={index}>
                                     {item.content.map((content, index) => {
                                         return (
                                             <li key={index}>

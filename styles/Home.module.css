@@ -61,6 +61,7 @@
     display: flex;
     width: 150px;
     justify-content: space-between;
+    list-style: none;
 }
 
 @media only screen and (min-width: 900px) {
