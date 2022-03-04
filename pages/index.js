@@ -7,7 +7,7 @@ import { DateTime } from 'luxon';
 import { client } from '../src/services/apollo';
 
 import style from '../styles/Home.module.css';
-import { Icon } from '../src/components';
+import { FlexList, Icon } from '../src/components';
 
 export default function Home({ lastArticles }) {
   return (
@@ -42,7 +42,7 @@ export default function Home({ lastArticles }) {
               mas também adoro descobrir novas ferramentas.
             </p>
 
-            <ul className={style.presentation__social}>
+            <FlexList>
               <Icon
                 href="https://twitter.com/AlexNicolasCode"
                 src="/twitter-brands.svg"
@@ -66,7 +66,7 @@ export default function Home({ lastArticles }) {
                 src="/github-brands.svg" 
                 alt="GitHub Alex Nicolas"
               />
-            </ul>
+            </FlexList>
           </article>
         </section>
 
