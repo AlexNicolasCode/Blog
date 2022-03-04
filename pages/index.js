@@ -1,4 +1,3 @@
-import Head from 'next/head';
 import Link from 'next/link';
 import gql from 'graphql-tag';
 import { DateTime } from 'luxon';
@@ -8,6 +7,7 @@ import { client } from '../src/services/apollo';
 import style from '../styles/Home.module.css';
 import { 
   FlexList, 
+  CustomHead, 
   Icon, 
   Photo 
 } from '../src/components';
@@ -15,11 +15,10 @@ import {
 export default function Home({ lastArticles }) {
   return (
     <div className={style.home}>
-      <Head>
-        <title>Alex Nicolas - Blog</title>
-        <meta name="description" content="Blog criado por Alex Nicolas para agregar artigos, links e conteúdos relevantes sobre programação" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+      <CustomHead
+        title={"Alex Nicolas - Blog"}
+        description={"Blog criado por Alex Nicolas para agregar artigos, links e conteúdos relevantes sobre programação"}
+      />
 
       <main className={style.home__main}>
         <section className={style.presentation}>
