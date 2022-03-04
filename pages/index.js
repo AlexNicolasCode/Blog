@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import gql from 'graphql-tag';
 import { DateTime } from 'luxon';
 
@@ -9,7 +8,8 @@ import {
   FlexList, 
   CustomHead, 
   Icon, 
-  Photo 
+  Photo, 
+  Article
 } from '../src/components';
 
 export default function Home({ lastArticles }) {
@@ -69,16 +69,7 @@ export default function Home({ lastArticles }) {
 
             <ul className={style.last_articles__list}>
               {lastArticles.map((article, index) => {
-                return (
-                  <Link href={`/${article.slug}`} key={index} passHref>
-                    <li className={style.article}>
-                        <span className={style.article__published_at}>{article.createdAt}</span>
-                        <h3 className={style.article__title}>{article.title}</h3>
-                        <p className={style.article__description}>{article.description}</p>
-                        <p className={style.article__tags}>{article.tags}</p>
-                    </li>
-                  </Link>
-                )
+                return <Article article={article} key={index}/>
               })}
             </ul>
           </section>  
