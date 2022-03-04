@@ -2,6 +2,7 @@ import gql from 'graphql-tag';
 import { DateTime } from 'luxon';
 import Head from 'next/head';
 import { client } from '../src/services/apollo';
+import { convertToHTMLData } from '../src/tools';
 
 import style from '../styles/Article.module.css';
 
@@ -127,34 +128,4 @@ export const getStaticProps = async (ctx) => {
         },
         revalidate: 60 * 60 * 8
     }
-}
-
-const convertToHTMLData = (content) => {
-    return content.map((item) => {
-        if (item.type === "paragraph") {
-            return { type: 'p', content: item.children[0].value }
-        }
-
-        if (item.type === "heading") {
-            return { type: `h${item.level}`, content: item.children[0].value }
-        }
-
-        if (item.type === "code") {
-            return { type: 'code', content: item.code}
-        }
-
-        if (item.type === "list") {
-            const content = item.children.map((item) => {
-                const base = item.children[0].children[0];
-
-                if (base.url) {
-                    return { name: base.children[0].value, url: base.url  }
-                }
-
-                return { name: base.value }
-            })
-            
-            return { type: 'ul', content: content}
-        }
-    })
 }
