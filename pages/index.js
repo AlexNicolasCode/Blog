@@ -7,6 +7,7 @@ import { DateTime } from 'luxon';
 import { client } from '../src/services/apollo';
 
 import style from '../styles/Home.module.css';
+import { Icon } from '../src/components';
 
 export default function Home({ lastArticles }) {
   return (
@@ -42,29 +43,29 @@ export default function Home({ lastArticles }) {
             </p>
 
             <ul className={style.presentation__social}>
-              <li className={style.presentation__brand}>
-                <a href="https://twitter.com/AlexNicolasCode">
-                  <Image src="/twitter-brands.svg" alt="Twitter Alex Nicolas" width={25} height={25}/>
-                </a>
-              </li>
+              <Icon
+                href="https://twitter.com/AlexNicolasCode"
+                src="/twitter-brands.svg"
+                alt="Twitter Alex Nicolas"
+              />
 
-              <li className={style.presentation__brand}>
-                <a href="https://dev.to/alexnicolascode/">
-                  <Image src="/dev-brands.svg" alt="Dev To Alex Nicolas" width={25} height={25}/>
-                </a>
-              </li>
+              <Icon
+                href="https://dev.to/alexnicolascode/"
+                src="/dev-brands.svg" 
+                alt="Dev To Alex Nicolas"
+              />
 
-              <li className={style.presentation__brand}>
-                <a href="https://linkedin.com/in/nicolas-alex/">
-                  <Image src="/linkedin-brands.svg" alt="Linkedin Alex Nicolas" width={25} height={25}/>
-                </a>
-              </li>
+              <Icon
+                href="https://linkedin.com/in/nicolas-alex/"
+                src="/linkedin-brands.svg" 
+                alt="Linkedin Alex Nicolas"
+              />
 
-              <li className={style.presentation__brand}>
-                <a href="https://github.com/alexNicolasCode/">
-                  <Image src="/github-brands.svg" alt="GitHub Alex Nicolas" width={25} height={25}/>
-                </a>
-              </li>
+              <Icon
+                href="https://github.com/alexNicolasCode/"
+                src="/github-brands.svg" 
+                alt="GitHub Alex Nicolas"
+              />
             </ul>
           </article>
         </section>
