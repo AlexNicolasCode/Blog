@@ -1,5 +1,4 @@
 import Head from 'next/head';
-import Image from 'next/image';
 import Link from 'next/link';
 import gql from 'graphql-tag';
 import { DateTime } from 'luxon';
@@ -7,7 +6,11 @@ import { DateTime } from 'luxon';
 import { client } from '../src/services/apollo';
 
 import style from '../styles/Home.module.css';
-import { FlexList, Icon } from '../src/components';
+import { 
+  FlexList, 
+  Icon, 
+  Photo 
+} from '../src/components';
 
 export default function Home({ lastArticles }) {
   return (
@@ -20,15 +23,7 @@ export default function Home({ lastArticles }) {
 
       <main className={style.home__main}>
         <section className={style.presentation}>
-          <div className={style.presentation__photo_container}>
-            <Image 
-              className={style.presentation__img}
-              src="/photo.jpg" 
-              alt="Alex Nicolas foto"
-              width={100}
-              height={100}
-            />
-          </div>
+          <Photo />
 
           <article className={style.presentation__content}>
             <article className={style.presentation__headContent}>
