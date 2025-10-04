@@ -1,8 +1,48 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+A personal blog built with Next.js, showcasing my thoughts, tutorials, and projects.
+
+## Features
+
+* **Next.js Framework**: Utilizes the React-based Next.js framework for server-side rendering and static site generation.
+* **Responsive Design**: Ensures a seamless reading experience across all devices.
+* **Markdown Support**: Write and manage posts in Markdown format.
+* **SEO Optimized**: Implements best practices for search engine optimization.
+* **Dark Mode**: Toggle between light and dark themes for user preference.
+
+## Technologies Used
+
+* **Next.js**: React framework for building the application.
+* **React**: JavaScript library for building user interfaces.
+* **Markdown**: Lightweight markup language for writing posts.
+* **Tailwind CSS**: Utility-first CSS framework for styling.
+* **Vercel**: Platform for deploying the application.
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+* Node.js (>=14.0.0)
+* npm or yarn
+
+### Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/AlexNicolasCode/Blog.git
+cd Blog
+```
+
+Install dependencies:
+
+```bash
+npm install
+# or
+yarn install
+```
+
+### Running the Development Server
+
+Start the development server:
 
 ```bash
 npm run dev
@@ -10,25 +50,54 @@ npm run dev
 yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open your browser and navigate to [http://localhost:3000](http://localhost:3000) to view the blog.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+### Building for Production
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+Build the application for production:
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+```bash
+npm run build
+# or
+yarn build
+```
 
-## Learn More
+Start the production server:
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm start
+# or
+yarn start
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Usage
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+* **Creating Posts**: Add new Markdown files in the `posts` directory. Each file should have a frontmatter section for metadata like title, date, and tags.
+* **Editing Content**: Modify the content within the Markdown files using standard Markdown syntax.
+* **Styling**: Customize the appearance by editing the `styles` directory and modifying Tailwind CSS configurations.
 
-## Deploy on Vercel
+## Contributing
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+We welcome contributions! Please follow these steps:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+1. Fork the repository.
+
+2. Create a new branch (`git checkout -b feature-branch`).
+
+3. Make your changes.
+
+4. Commit your changes using **Conventional Commits**:
+
+   * **feat**: for new features
+   * **fix**: for bug fixes
+   * **docs**: for documentation changes
+   * **style**: for code formatting or style changes
+   * **refactor**: for code refactoring
+   * **test**: for adding or updating tests
+   * **chore**: for maintenance tasks
+
+   Example: `git commit -m "feat: add dark mode toggle"`
+
+5. Push to the branch (`git push origin feature-branch`).
+
+6. Create a new Pull Request.
